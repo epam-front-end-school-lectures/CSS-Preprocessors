@@ -1,5 +1,6 @@
 .reveal li {
-	margin: 0.5em 0;
+	margin: 0.5em 0;	
+	list-style: none !important;
 }
 .reveal pre {
 	margin-bottom: 30px;
@@ -18,3 +19,65 @@
 	list-style: none;
 }
 
+.mainpage body .slide-background.present {
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+
+.mainpage .reveal section img {
+	position: absolute;
+	left: 0;
+	top: -100%;
+	background: transparent;
+	box-shadow:  none;
+}
+
+.mainpage body::before {
+	content: "";
+	position: absolute;
+	right: 5%;
+	top: 10%;
+	z-index: 1;
+	width: 288px;
+	height: 108px;
+	background: url(../img/epam_logo_white.png) center no-repeat;
+	background-size: cover;
+}
+
+.mainpage body::after {
+	content: "8 August, 2018";
+	position: absolute;
+	right: 7%;
+	bottom: 5%;
+	font-family: "Oswald Regular";
+	font-size: 1.25em;
+	color: #fff;
+	white-space: nowrap;
+}
+
+.mainpage .reveal section h1 {
+	margin-top: 50px;
+	font-size: 3em;
+	color: rgba(255,255,255,.95);
+	text-shadow: 0 2px 4px rgba(0,0,0,.5),
+				 0 -1px 3px rgba(0,0,0,.5);
+}
+
+.mainpage .reveal section h3 {
+	margin-top: 50px;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5),
+				 0 -1px 1px rgba(0,0,0,.5);
+}
+
+.mainpage .reveal section > * {
+	color: #fff;
+}
+
+.preprocc-magic body * {
+	color: #fff !important;
+}
+
+.preprocc-magic .reveal section h2 {
+	margin-top: -130px !important;
+}
