@@ -1,3 +1,9 @@
+* {
+	--color-attantion: #39c2d7;
+	--color-important: #7f993a;
+	--color-warning: #FF5E99;
+}
+
 .reveal li {
 	margin: 0.5em 0;	
 	list-style: none !important;
@@ -78,6 +84,73 @@
 	color: #fff !important;
 }
 
-.preprocc-magic .reveal section h2 {
-	margin-top: -130px !important;
+.reveal .preprocc-magic {
+}
+
+.reveal .attantion {
+	color: var(--color-attantion) !important;
+}
+
+.reveal .warning {
+	color: var(--color-warning) !important;
+}
+
+.reveal .important {
+	color: var(--color-important) !important;
+}
+
+.reveal .top {
+	position: absolute;
+	top: -250px;
+}
+
+.reveal .online_item {
+	position: relative;
+	padding: 0 100px;
+}
+
+.reveal .icon {
+	position: absolute;
+	left: 0;
+	transform: translate(50%, -25%);
+}
+
+code .stylus,
+code .less,
+code .sass,
+code .css {
+	position: relative;
+}
+
+code.stylus::after,
+code.less::after,
+code.sass::after,
+code.css::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: .75em;
+	color: #1a9cb0;
+}
+
+code.sass::after {
+	content: "Sass";
+}
+
+code.css::after {
+	content: "CSS";
+}
+
+code.less::after {
+	content: "LESS";
+}
+
+code.stylus::after {
+	content: "Stylus";
+}
+
+i .link {
+	background: url("../img/link.svg");
 }

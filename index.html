@@ -45,7 +45,7 @@
 				<section id="mainpage" data-state="mainpage method-bg" data-background="url(img/lake_view.jpg)">
           <h1>Preprocessors</h1>
           <h3> and </h3>
-          <h1>PostCSS</h1>
+          <h1>Postprocessors</h1>
           <h3>Mariia Tarasiuk</h3>
         </section>
 
@@ -83,9 +83,9 @@
           </section>
 				</section>
 
-				<section>
+				<section class="preprocc-magic">
           <section data-state="preprocc-magic" data-background="#000 url(img/css-magic.jpg)" data-background-size="cover">
-            <h2>Dark magic of preprocessors</h2>
+            <h2 class="top">Dark magic of preprocessors</h2>
           </section>
           <section>
             <h2>Less(!) magic...</h2>
@@ -138,20 +138,20 @@
                         </div>
           </section>
           <section>
-            <h2>Pie of power (2016 год)</h2>
+            <h2>Pie of power (2016 a.d.)</h2>
             <img src="img/preprocc_survay.png" alt="preprocessors survay">
           </section>
         </section>
         
-        <section>
-          <section>
-            <h2>Which shoul I choose?</h2>
-            <img width="500" src="img/Jurassic-WOrld.png" alt="">
+        <section id="preprocessors-difference">
+          <section data-background="url(img/Jurassic-WOrld.png)" data-background-size="cover">
+            <h2 class="attantion">Which choose?</h2>
+            <!-- <img width="500" src="img/Jurassic-WOrld.png" alt=""> -->
           </section>
           <section>
             <h2>You know...</h2>
-            <h2  class="fragment">they are...</h2>
-            <h2  class="fragment">all good!</h2>
+            <h2 class="attantion fragment"><span class=""> they are...</span></h2>
+            <h2 class="warning fragment">all good!</h2>
           </section>
           <section>
             <h2>What the difference?</h2>
@@ -164,10 +164,10 @@
         </section>
 
         <section>
-          <section>
+          <section data-background="url(img/puzzle.jpg)" data-background-size="cover">
             <h2>Usage</h2>
             <p>How to install?</p>
-            <img src="img/puzzle.jpg" alt="">
+            <!-- <img src="img/puzzle.jpg" alt=""> -->
           </section>
         
           <section>
@@ -188,28 +188,35 @@ lessc styles.less styles.css
                 <li>Stylus
                     <pre><code data-trim contenteditable>
                         npm install -g stylus
-stylus -w style.styl -o style.css
+stylus -w style.styl -o style.css 
                     </code></pre>
                 </li>
               </ul>
           </section>
 
           <section>
-            <h3>#2</h3>
-            <p>Grunt, Gulp, Webpack ...</p>
-            <img src="img/grunt.png" alt="" width="150">
-            <img src="img/gulp.png" alt="" width="100">
-            <img src="img/webpack.png" alt="" width="150">
+            <h3>#2 Builders and task runners</h3>
+            <p> Gulp, Webpack ...</p>
+            <img src="img/gulp.png" alt="" width="200">
+            <img src="img/webpack.png" alt="" width="350">
           </section>
 
           <section>
-            <h3>#3</h3>
-            <p>Online</p>
-            <ul class="center-text blue">
-              <li>CodePen</li>
-              <li>JSFiddle</li>
-              <li>Plunker</li>
-              <li>...</li>
+            <h3>#3 Online</h3>
+            <ul style="text-align: center;">
+              <li class="fragment">
+                <span class="online_item"><img src="img/codepen.svg" alt="" width="50px" class="icon">
+                CodePen</span>
+              </li>
+              <li class="fragment">
+                <span class="online_item"><img src="img/jsfiddle.svg" alt="" width="50px" class="icon">
+                JSFiddle</span>
+              </li>
+              <li class="fragment">
+                <span class="online_item"><img src="img/plnkr.jpg" alt="" width="50px" class="icon">
+                Plunker</span>
+              </li>
+              <li class="fragment">...</li>
             </ul>
           </section>
 
@@ -221,10 +228,10 @@ stylus -w style.styl -o style.css
             <div class="col-2" style="width: 20%;">
               <ul style="display: flex; justify-content: flex-start; flex-direction: column; margin: 0;">
                 <li>
-                  <p>LESS и SCSS</p>
+                  <p>LESS / Scss</p>
                 </li>
                 <li>
-                  <p>SASS</p>
+                  <p>Sass</p>
                 </li>
                 <li>
                   <p>Stylus</p>
@@ -238,18 +245,18 @@ stylus -w style.styl -o style.css
       font-size: 100% Helvetica, sans-serif;
     }
               </code></pre>
-              <pre><code data-trim contenteditable>
+              <pre><code data-trim contenteditable class="sass">
     body
       background-color: #efefef
       font-size: 100% Helvetica, sans-serif
               </code></pre>
-              <pre><code data-trim contenteditable>
+              <pre><code data-trim contenteditable class="stylus">
     body
       background-color #efefef
       font-size 100% Helvetica, sans-serif
               </code></pre>
             </div>
-            <p>Stylus can use all 3 types</p>
+            <p>Stylus maintain both types</p>
           </section>
 
           <section>
@@ -260,24 +267,182 @@ stylus -w style.styl -o style.css
               <li class="fragment">Imports</li>
               <li class="fragment">Calculations</li>
               <li class="fragment">Mixins</li>
-              <li class="fragment">Color</li>
-              <li class="fragment">If/else...</li>
+              <li class="fragment">Colors</li>
+              <li class="fragment">Loop...</li>
             </ul>
           </section>
 
           <section>
             <h2>Variables</h2>
-            <img src="img/variables.png" alt="variables">
+          </section>
+          <section>
+            <h3>Sass</h3>
+<pre><code data-trim contenteditable class="sass">
+              $warning: #555;
+      $font-large: 24px;
+
+      div {
+          color: $warning;
+          font-size: $font-large;
+      }
+            </code></pre>
+          </section>
+          <section>
+            <h3>LESS</h3>
+            <pre><code data-trim contenteditable class="less">
+              @warning: #555; 
+              @font-large: 24px;
+
+              div {
+                color: @warning;
+                font-size: @font-large;
+              }
+            </code></pre>
+          </section>
+          <section>
+            <h3>Stylus</h3>
+            <pre><code data-trim contenteditable class="stylus">
+              warning = #555
+              font-large = 24px
+
+              div 
+                color warning
+                font-size font-large
+              
+            </code></pre>
+          </section>
+          <section>
+            <h3>CSS</h3>
+            <a href="https://www.w3.org/TR/css-variables-1/" target="_blank">Variables</a>
+            <pre><code data-trim contenteditable class="css">
+              :root {
+                --warning: #555;
+                --font-large: 24px;
+              }
+
+              div {
+                color: var(--warning);
+                font-size: var(--font-large);
+              }
+            </code></pre>
           </section>
 
 					<section>
-            <h4>Nesting</h4>
-            <img src="img/nesting.png" alt="nesting">
-					</section>
+            <h3>Nesting</h3>
+            <!-- <img src="img/nesting.png" alt="nesting"> -->
+          </section>
+          <section>
+            <h3>Sass</h3>
+            <pre><code data-trim contenteditable class="sass">
+.block {
+  display: block;
+
+  &__element {
+    padding: 10px 5px;
+
+    &_modificator {
+      color: pink;
+    }
+  }
+  &_inline {
+    display: inline-block;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+              <h3>LESS</h3>
+              <pre><code data-trim contenteditable class="LESS">
+  .block {
+    display: block;
+  
+    &__element {
+      padding: 10px 5px;
+  
+      &_modificator {
+        color: pink;
+      }
+    }
+    &_inline {
+      display: inline-block;
+    }
+  }
+              </code></pre>
+          </section>
+          <section>
+              <h3>Stylus</h3>
+              <pre><code data-trim contenteditable class="stylus">
+  .block 
+    display block
+  
+    &__element 
+      padding 10px 5px
+  
+      &_modificator 
+        color pink
+      
+    &_inline 
+      display inline-block
+    
+              </code></pre>
+          </section>
+          <section>
+              <h3>CSS</h3>
+              <a href="http://tabatkins.github.io/specs/css-nesting/" target="_blank">Nesting: @nest (propose to draft)</a>
+              <pre><code data-trim contenteditable class="css">
+  .block {
+    display: block;
+  }
+
+  .block__element {
+    padding: 10px 5px;
+  }
+
+  .block__element_modificator {
+    color: pink;
+  }
+
+  .block_inline {
+    display: inline-block;
+  }
+              </code></pre>
+          </section>
 
           <section>
               <h2>@import</h2>
               <img src="img/imports.png" alt="imports">
+          </section>
+          <section>
+            <h3>Sass</h3>
+            <pre><code data-trim contenteditable class="sass">
+              @import "reset.css";
+              @import "asset/variables.sass";
+              @import "component/nav/navbar.sass";
+            </code></pre>
+          </section>
+          <section>
+            <h3>LESS</h3>
+            <pre><code data-trim contenteditable class="less">
+              @import "reset.css"
+              @import "asset/variables.less"
+              @import "component/nav/navbar.less"
+            </code></pre>
+          </section>
+          <section>
+            <h3>Stylus</h3>
+            <pre><code data-trim contenteditable class="stylus">
+              @import "reset.css"
+              @import "asset/variables.styl"
+              @import "component/nav/navbar.styl"
+            </code></pre>
+          </section>
+          <section>
+            <h3>CSS</h3>
+            <a href="https://www.w3.org/TR/css-cascade-3/#at-import" target="_blank">Imports in spec</a>
+            <pre><code data-trim contenteditable>
+              @import "mystyle.css";
+              @import url("mystyle.css");
+            </code></pre>
           </section>
 
           <section>
@@ -300,10 +465,10 @@ stylus -w style.styl -o style.css
             <img src="img/loops.png" alt="loops">
           </section>
 
-					<section>
+					<!-- <section>
             <h2>@extend + Placeholder</h3>
             <div class="col-2">
-                <h3>SCSS</h3>
+                <h3>Scss</h3>
                 <pre><code data-trim contenteditable>
     %borders {
       border: 1px solid #efefef;
@@ -337,13 +502,13 @@ stylus -w style.styl -o style.css
     
     </code></pre>
             </div>
-          </section>
+          </section> -->
 
           <section>
             <h2>Functions</h2>
           </section>
           <section>
-						<h3>SCSS</h3>
+						<h3>Scss</h3>
 						<pre><code data-trim contenteditable>
 $grid-columns: 12;
 $grid-width: 960px;
@@ -412,78 +577,7 @@ aside
             <img src="img/color.png" alt="color">
           </section>
 
-          <!-- <section>
-            <h2>Media Queries</h2>
-          </section>
           <section>
-						<h3>SCSS</h3>
-						<pre><code data-trim contenteditable>
-$small-breakpoint: 480px;
-$medium-breakpoint: 768px;
-$large-breakpoint: 1024px;
-
-aside {
-  width: 100%;
-  @media  (min-width: $small-breakpoint) {
-    width: 100px;
-    float: right;
-  }
-  @media (min-width: $medium-breakpoint) {
-    width: 200px;
-  }
-  @media (min-width: $large-breakpoint) {
-    width: 400px;
-  }
-}
-            </code></pre>
-          </section>
-
-					<section>
-						<h3>Less</h3>
-						<pre><code data-trim contenteditable>
-@small-breakpoint: 480px;
-@medium-breakpoint: 768px;
-@large-breakpoint: 1024px;
-
-aside {
-  width: 100%;
-  @media (min-width: @small-breakpoint) {
-    width: 100px;
-    float: right;
-  }
-  @media (min-width: @medium-breakpoint) {
-    width: 200px;
-  }
-  @media (min-width: @large-breakpoint) {
-    width: 400px;
-  }
-}
-						</code></pre>
-          </section>
-          
-					<section>
-						<h3>Stylus</h3>
-						<pre><code data-trim contenteditable>
-ll-breakpoint 480px
-medium-breakpoint 768px
-large-breakpoint 1024px
-
-aside
-  width 100%
-
- @media (min-width small-breakpoint)
-  width 100px
-  float right
-
- @media (min-width medium-breakpoint)
-  width 200px
-
- @media (min-width large-breakpoint)
-  width 400px
-						</code></pre>
-          </section>
-           -->
-					<section>
 						<h3>@content – Sass</h3>
 						<pre><code data-trim contenteditable>
 =respond-to($name)
@@ -618,19 +712,35 @@ content: #{$icon-keycode}
 					<section>
 						<h2>Sometime they make all complicated...</h2>
 						<pre><code data-trim contenteditable>
-&__moon{
-	& .forecast-extra-info__logo {
-		background: url('../img/moon_states.png') no-repeat;
-	}
-
-	@for $i from 0 through 30 {
-		&_#{$i} .forecast-extra-info__logo {
-			background-position: $i*(-58px) 0;
-		}
-	}
-}
+                .filters-block {
+                  $_filter-height: 20px;
+                   
+                      @mixin _note-size($value) {
+                      height: $value;
+                      line-height: $value;
+                      margin-top: -($value);
+                  }
+                  &__list {
+                      height: $_filters-height * 7;
+                      overflow: auto;
+                  }
+                  &__item {
+                      height: $_filter-height;
+                  }
+                  &__note {
+                      @include _note-size(30px);
+                  }
+                  @media screen and (max-width 1000px) {
+                      &__note {
+                          @include _note-size(40px);
+                      }
+                  }
+              }
 						</code></pre>
-					</section>
+          </section>
+          <section>
+            <h2>Preprocessors are not flexible and Debugging is hard!</h2>
+          </section>
 				</section>
 
         <section>
@@ -681,7 +791,7 @@ content: #{$icon-keycode}
               <li class="fragment">
                 <span style="color: #2191a3">CSSnext</span> (allows you to use future CSS syntax on current sites)</li>
               <li class="fragment">
-                <span style="color: #2191a3">PreCSS</span> (take advantage of a Sass-like markup in your sytlesheet files)</li>
+                <span style="color: #2191a3">CSSgrace</span> (provide old browser support)</li>
               <li class="fragment">
                 <span style="color: #2191a3">StyleLint</span> (proofreads and validates your CSS code)</li>
               <li class="fragment">
@@ -764,104 +874,31 @@ content: #{$icon-keycode}
           <section>
             <h2>CSS have a power!</h2>
             <ul>
-              <li class="fragment">Variables</li>
-              <li class="fragment">Calculations</li>
-              <li class="fragment">Imports</li>
-              <li class="fragment">Mixins</li>
-              <li class="fragment">Nesting</li>
-              <li class="fragment">Extend</li>
-              <li class="fragment">Colors</li>
+              <li class="fragment">
+                <a href="https://www.w3.org/TR/css-variables-1/" target="_blank">Variables</a>
+              </li>
+              <li class="fragment">
+                <a href="https://www.w3.org/TR/css-values-3/#calc-notation" target="_blank">Calculations</a>
+              </li>
+              <li class="fragment">
+                <a href="https://www.w3.org/TR/css-cascade-3/#at-import" target="_blank">Imports</a>
+              </li>
+              <li class="fragment">
+                <a href="http://tabatkins.github.io/specs/css-apply-rule/" target="_blank">Mixins: @apply (propose to draft)</a>
+              </li>
+              <li class="fragment">
+                <a href="http://tabatkins.github.io/specs/css-nesting/" target="_blank">Nesting: @nest (propose to draft)</a>
+              </li>
+              <li class="fragment">
+                <a href="http://tabatkins.github.io/specs/css-extend-rule/" target="_blank">Extend: @extend (propose to draft)</a>
+              </li>
+              <li class="fragment">
+                <a href="https://drafts.csswg.org/css-color/#funcdef-color-mod" target="_blank">Color-mod (in draft)</a>
+              </li>
             </ul>
           </section>
           <section>
-            <h3>CSS Variables</h3>
-            <pre><code data-trim contenteditable>
-                div {
-      --main-bg-color: brown;
-    }
-div {
-      background-color: var(--main-bg-color);
-    }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Calculations</h3>
-            <pre><code>
-        input {
-          padding: 2px;
-          display: block;
-          width: 98%;
-          width: calc(100% - 1em);
-        }
-        
-        #formbox {
-          width: 130px;
-          width: calc(100% / 6);
-          border: 1px solid black;
-          padding: 4px;
-        }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Imports</h3>
-            <pre><code>
-    @import url("fineprint.css") print;
-    @import url("bluish.css") speech;
-    @import 'custom.css';
-    @import url("chrome://communicator/skin/");
-    @import "common.css" screen;
-            </code></pre>
-          </section>
-          <section>
-            <h3>Mixin</h3>
-            <pre><code>
-    :root {
-      --my-mixin: {                
-        background: #256dbd;
-        color: #f5f5f5;
-      }
-    }
-    body {
-      @apply --my-mixin;
-    }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Nesting</h3>
-            <pre><code>
-    nav {
-      color: #222;
-      &.primary {
-        background: maroon;
-      }
-    }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Extend</h3>
-            <pre><code>
-    .message {
-      border: 1px solid #ccc;
-      padding: 10px;
-      color: #333;
-    }
-      
-    .success {
-      @extend .message;
-      border-color: green;
-    }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Color-mod</h3>
-            <pre><code>
-    nav {
-      background: color-mod(#79d3e2 hue(360) saturation(100%));
-    }
-            </code></pre>
-          </section>
-          <section>
-            <h3>It's all falks!</h3>
+            <h3>It's all folks!</h3>
           </section>
         </section>
 
@@ -879,14 +916,14 @@ div {
 					</ul>
 				</section>
         <section>
-          <h1>FAQ?</h1>
+          <h2>Thank You</h2>
         </section>
 
 				<section>
           <div class="col-2">
             <ul>
               <li>
-                  <h1>EPAM Systems</h1>
+                  <h1>EPAM</h1>
               </li>
               <li>
                   <h3>Mariia Tarasiuk</h3>
