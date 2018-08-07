@@ -145,7 +145,7 @@
         
         <section id="preprocessors-difference">
           <section data-background="url(img/Jurassic-WOrld.png)" data-background-size="cover">
-            <h2 class="attantion">Which choose?</h2>
+            <h2 class="attantion">Which to choose?</h2>
             <!-- <img width="500" src="img/Jurassic-WOrld.png" alt=""> -->
           </section>
           <section>
@@ -239,24 +239,24 @@ stylus -w style.styl -o style.css
               </ul>
             </div>
             <div class="col-2" style="width: 75%;">
-              <pre><code data-trim contenteditable>
+              <pre class="fragment"><code data-trim contenteditable>
     body {
       background-color: #efefef;
       font-size: 100% Helvetica, sans-serif;
     }
               </code></pre>
-              <pre><code data-trim contenteditable class="sass">
+              <pre class="fragment"><code data-trim contenteditable class="sass">
     body
       background-color: #efefef
       font-size: 100% Helvetica, sans-serif
               </code></pre>
-              <pre><code data-trim contenteditable class="stylus">
+              <pre class="fragment"><code data-trim contenteditable class="stylus">
     body
       background-color #efefef
       font-size 100% Helvetica, sans-serif
               </code></pre>
             </div>
-            <p>Stylus maintain both types</p>
+            <p>Stylus maintains both types</p>
           </section>
 
           <section>
@@ -314,7 +314,7 @@ div
           </section>
           <section>
             <h3>CSS</h3>
-            <a href="https://www.w3.org/TR/css-variables-1/" target="_blank">Variables</a>
+            <a href="https://www.w3.org/TR/css-variables-1/" target="_blank">CSS Custom Properties for Cascading Variables Module Level 1</a>
             <pre><code data-trim contenteditable class="css">
               :root {
         --warning: #555;
@@ -389,23 +389,23 @@ div
           </section>
           <section>
               <h3>CSS</h3>
-              <a href="http://tabatkins.github.io/specs/css-nesting/" target="_blank">Nesting: @nest (propose to draft)</a>
+              <a href="http://tabatkins.github.io/specs/css-nesting/" target="_blank">CSS Nesting Module Level 3</a>
+              <p>Editor’s Draft, 23 September 2015</p>
               <pre><code data-trim contenteditable class="css">
-  .block {
+.block {
     display: block;
-  }
 
-  .block__element {
-    padding: 10px 5px;
-  }
+    &__element {
+       padding: 10px 5px;
 
-  .block__element_modificator {
-    color: pink;
-  }
-
-  .block_inline {
-    display: inline-block;
-  }
+        &_modificator {
+            color: pink;
+        }
+    }
+    &_inline {
+        display: inline-block;
+    }
+}
               </code></pre>
           </section>
 
@@ -439,7 +439,7 @@ div
           </section>
           <section>
             <h3>CSS</h3>
-            <a href="https://www.w3.org/TR/css-cascade-3/#at-import" target="_blank">Imports in spec</a>
+            <a href="https://www.w3.org/TR/css-cascade-3/#at-import" target="_blank">CSS Cascading and Inheritance Level 3</a>
             <pre><code data-trim contenteditable>
   @import "mystyle.css";
 @import url("mystyle.css");
@@ -459,8 +459,12 @@ div
               (1cm / 1em) * 4em => 4cm
               2in + 3cm + 2pc => 3.514in
               3in / 2in => 1.5
+              ...
+              p {
+                margin: calc(1rem - 2px) calc(1rem - 1px);
+              }
             </code></pre>
-            <a href="https://www.w3.org/TR/css-values-3/#calc-notation" target="_blank">native CSS Calculations</a>
+            <a href="https://www.w3.org/TR/css-values-3/#calc-notation" target="_blank">CSS Values and Units Module Level 3</a>
           </section>
 
           <section>
@@ -515,16 +519,27 @@ div
           </section>
           <section>
             <h3>CSS</h3>
-            <pre><code>
-div {
-    border: 5px solid #ddd;
-}
-
-div:hover {
-    border-color: #999;
-}
+            <a href="http://tabatkins.github.io/specs/css-apply-rule/" target="_blank">CSS @apply Rule (propose to draft)</a>
+            <p>A Collection of Interesting Ideas, 18 September 2016</p>
+            <pre><code data-trim contenteditable class="css">
+              :root {
+                --toolbar-theme: {
+                  background-color: hsl(120, 70%, 95%);
+                  border-radius: 4px;
+                  border: 1px solid var(--theme-color late);
+                };
+                --toolbar-title-theme: {
+                  color: green;
+                };
+              }
+              
+              .toolbar {
+                @apply --toolbar-theme;
+              }
+              .toolbar > .title {
+                @apply --toolbar-title-theme;
+              }
             </code></pre>
-            <a href="http://tabatkins.github.io/specs/css-apply-rule/" target="_blank">Mixins in native CSS: @apply (propose to draft)</a>
           </section>
 
           <section>
@@ -601,7 +616,8 @@ ul, ol {
     text-transform: uppercase;
 }
             </code></pre>
-            <a href="http://tabatkins.github.io/specs/css-extend-rule/" target="_blank">Extend: @extend (propose to draft)</a>
+            <a href="http://tabatkins.github.io/specs/css-extend-rule/" target="_blank">CSS Extend Rule (propose to draft)</a>
+            <p>A Collection of Interesting Ideas, 15 January 2015</p>
           </section>
           <section>
             <div class="col-2">
@@ -847,7 +863,7 @@ nav {
     background: color-mod(#79d3e2 hue(360) saturation(100%));
 }
             </code></pre>            
-            <a href="https://drafts.csswg.org/css-color/#funcdef-color-mod" target="_blank">Color-mod (in draft)</a>
+            <a href="https://drafts.csswg.org/css-color/#funcdef-color-mod" target="_blank">CSS Color Module Level 4</a>
           </section>
 
           <!-- <section>
@@ -983,7 +999,7 @@ content: #{$icon-keycode}
 					</section>
 
 					<section>
-						<h4 style="margin-top: -100px;">Sometime they make all complicated...</h4>
+						<h4 style="margin-top: -100px;">Sometimes they make all complicated...</h4>
 						<pre><code data-trim contenteditable>
                 .filters-block {
         $_filter-height: 20px;
@@ -1049,22 +1065,22 @@ content: #{$icon-keycode}
 						<ol class="center-text blue">
 							<li class="fragment">Polyfills</li>
 							<li class="fragment">Older browsers Support</li>
-							<li class="fragment">Extantions</li>
+							<li class="fragment">Extensions</li>
 							<li class="fragment">Optimization</li>
 							<li class="fragment">Syntax sugar</li>
-							<li class="fragment">Analitics</li>
+							<li class="fragment">analytics</li>
 						</ol>
 					</section>
 
 					<section>
-            <h2>more then 90 plugins</h2>
+            <h2>more than 90 plugins</h2>
             <ul >
               <li class="fragment">
                 <span style="color: #2191a3">Autoprefixer</span> (adds vendor prefixes to CSS rules where it’s necessary)</li>
               <li class="fragment">
                 <span style="color: #2191a3">CSSnext</span> (allows you to use future CSS syntax on current sites)</li>
               <li class="fragment">
-                <span style="color: #2191a3">CSSgrace</span> (provide old browser support)</li>
+                <span style="color: #2191a3">CSSgrace</span> (provides old browser support)</li>
               <li class="fragment">
                 <span style="color: #2191a3">StyleLint</span> (proofreads and validates your CSS code)</li>
               <li class="fragment">
@@ -1099,14 +1115,14 @@ content: #{$icon-keycode}
             <pre><code data-trim contenteditable>
                 var postcss = require('postcss');
                 
-                postcss([
-                  require('autoprefixer'),
-                  require('stylelint')({
-                  syntax: 'scss'
-                  })
-                ])
-                .process(css)
-                .then(result => console.log(result.css))
+      postcss([
+        require('autoprefixer'),
+        require('stylelint')({
+        syntax: 'scss'
+        })
+      ])
+      .process(css)
+      .then(result => console.log(result.css))
             </code></pre>
           </section>
           <section>
@@ -1143,8 +1159,7 @@ content: #{$icon-keycode}
             <img src="img/pre_post_css_1.png" alt="">
           </section>
         </section>
-        <section>
-          <section>
+          <!-- <section>
             <h2>CSS have a power!</h2>
             <ul>
               <li class="fragment">
@@ -1169,12 +1184,10 @@ content: #{$icon-keycode}
                 <a href="https://drafts.csswg.org/css-color/#funcdef-color-mod" target="_blank">Color-mod (in draft)</a>
               </li>
             </ul>
-          </section>
+          </section> -->
           <section>
             <h3>It's all folks!</h3>
           </section>
-        </section>
-
 				<section>
 					<h2>Links:</h2>
 					<ul>
